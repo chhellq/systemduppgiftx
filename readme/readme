@@ -1,0 +1,5 @@
+Detta repository innehåller filer för att sätta upp ett automatiserat backup-system via restic, triggat av en systemd timer.
+Innehåll:
+restic-backup.service: Gör så att systemd kör backup scripted.
+restic-backup.timer: Ser till så att system timern körs 5minuter efter uppstart.
+backup.sh: Scriptet som körs av systemd.

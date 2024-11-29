@@ -1,0 +1,11 @@
+[Unit]
+Description=Run Restic Backup 5 Minutes Efter Uppstart 
+# Startar restic-backup tjänsten 5 minuter efter att systemet har startat.
+
+[Timer]
+OnBootSec=5min # Väntar 5minuter 
+Unit=restic-backup.service # startar restic-backup.service.
+
+[Install]
+WantedBy=timers.target
+

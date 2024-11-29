@@ -1,0 +1,14 @@
+[Unit]
+Description=Restic Backup Service # Kör restic för säkerhetskopiering
+After=network-online.target # Anger att tjänsten ska göras när nätverket är online
+Wants=network-online.target # Tjänsten vill att nätverket ska vara tillgängligt och signalerar att nätverk behövs för att säkerhetskopiering ska fungera.
+
+[Service]
+Type=oneshot # tjänsten körs en gång
+ExecStart=/opt/backup-scripts/backup.sh # vart ditt backup script ligger
+Environment="RESTIC_PASSWORD=roflmao25" # lösenordet till din repo
+User=root #användare 
+Group=root #grupp 
+
+[Install]
+WantedBy=multi-user.target
